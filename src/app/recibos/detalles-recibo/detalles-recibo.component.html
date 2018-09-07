@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-md-12">
+    <img
+      [src]="recetaSel.imaxe"
+      alt="{{ recetaSel.nome }}"
+      class="img-responsive"
+      style="max-height: 300px;"
+    >
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <h1> {{ recetaSel.nome }} </h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="btn-group"
+    appDropdown>
+      <button type="button" class="btn btn-primary dropdown-toggle">Manage Recipe
+      <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#" (click)="EngadirToListaCompra()" style="cursor: pointer;">Engadir Ingredientes a Lista da Compra</a></li>
+        <li><a href="#">Editar Receta</a></li>
+        <li><a href="#">Eliminar Receta</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    {{ recetaSel.descripcion }}
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-goup">
+      <li class="list-group-item"
+        *ngFor="let ingrediente of recetaSel.ingredientes">
+        {{ ingrediente.nome }} - {{ ingrediente.precio }}
+      </li>
+    </ul>
+  </div>
+</div>

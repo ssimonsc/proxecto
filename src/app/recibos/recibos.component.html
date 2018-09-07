@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-md-5">
+    <app-lista-recibo></app-lista-recibo>
+  </div>
+  <div class="col-md-7">
+    <app-detalles-recibo *ngIf="recetaSelected; else infoText" [recetaSel]="recetaSelected"></app-detalles-recibo>
+    <ng-template #infoText>
+      <p>Porfavor seleccione unha receita!</p>
+    </ng-template>
+  </div>
+</div>

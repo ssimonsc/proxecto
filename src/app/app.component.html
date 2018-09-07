@@ -1,0 +1,9 @@
+<app-tenda (featureSelected)="onNavigate($event)"></app-tenda>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-recibos *ngIf="loadedFeature === 'receta'"></app-recibos>
+      <app-lista-compra *ngIf="loadedFeature !== 'receta'"></app-lista-compra>
+    </div>
+  </div>
+</div>
